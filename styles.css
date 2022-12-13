@@ -1,0 +1,25 @@
+body {
+  background-color: rgba(247, 29, 93, 255);
+  padding-top: 10px;
+}
+.navbar {
+  height: 200px;
+}
+.navbar #logo {
+  width: 150px;
+  display: block;
+  margin: auto;
+}
+input[type="text"] {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  border: none;
+  background-color: #ffeef3;
+  font-size: 20px;
+}
+
+/* #ffeef3 complementary */
+#mostListened {
+  height: 400px;
+}
