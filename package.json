@@ -1,0 +1,22 @@
+{
+  "name": "phase-1-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meggiddy/phase-1-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meggiddy/phase-1-project/issues"
+  },
+  "homepage": "https://github.com/meggiddy/phase-1-project#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
