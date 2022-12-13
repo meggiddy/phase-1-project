@@ -10,22 +10,32 @@ body {
   padding-top: 10px;
   font-family: 'Poppins' , sans-serif;
 }
-header {
-    width: 85%;
-    height: 95%;
-    /* border: 1px solid #fff; */
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
-
-header .menu_side, .song_side {
-    position: relative;
-    width: 25%;
-    height: 90%;
-    /* border: 1px solid #fff; */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
     background-color: #ffeef3;
-    box-shadow: 5px 0px 2px #ffd0de;
+    padding: 24px;
+}
+.sidebar nav ul{
+    list-style: none;
+}
+.sidebar nav ul li{
+    padding: 10px 0px;
+}
+.sidebar nav ul li a{
+    font-weight: bold;
+    color: #834d5d;
+    font-size: 14px;
+    text-decoration: none;
+}
+.sidebar nav ul li a:hover,.sidebar nav ul li a.active,.sidebar nav ul li a.active:focus{
+    text-decoration: none;
+}
+.sidebar nav ul li a:hover .fa,.sidebar nav ul li a.active .fa,.sidebar nav ul li a.active:focus .fa{
+    text-decoration: none;
 }
 .navbar {
   height: 200px;
