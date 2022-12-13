@@ -5,24 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
     <title>Maggify</title>
   </head>
   <body>
     <div class="navbar">
       <img id="logo" src="/assets/logo.svg" alt="Maggify-logo" />
     </div>
-    <div class="menu">
-      <form class="searchform">
-        <input type="text" placeholder="Search Song/Artist.." />
-        <button type="submit" id="search">Search</button>
-      </form>
-    </div>
+    
+    
+    <header>
+        <div class="menu_side">
+            <h1>Playlist</h1>
+            <div class="playlist">
+                <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i> Playlist</h4>
+                <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Last Listening</h4>
+                <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Recommended</h4>
+            </div>
+            <div class="menu_song">
+                <li class="songItem">
+                    <span>01</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="1"></i>
+                </li>
+                <li class="songItem">
+                    <span>02</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="2"></i>
+                </li>
+                <li class="songItem">
+                    <span>03</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="3"></i>
+                </li>
+                <li class="songItem">
+                    <span>04</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="4"></i>
+                </li>
+                <li class="songItem">
+                    <span>05</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="5"></i>
+                </li>
+                <li class="songItem">
+                    <span>06</span>
+                    <img src="img/1.jpg" alt="Alan">
+                    <h5>
+                        On My Way
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
+                </li>
+            </div>
+        </div>
+        <div class="song_side">
+            <nav>
+                <ul>
+                    <li>Discover <span></span></li>
+                    <li>MY LIBRARY</li>
+                    <li>RADIO</li>
+                </ul>
+                
+                <div class="search">
+                    <form class="searchform">
+                        <input type="text" placeholder="Search Song/Artist.." />
+                        <button type="submit" id="search">Search</button>
+                    </form>
+                    <div class="user">
+                        <img src="assets/userMaggie.JPG" alt="User" title="Maggie">
+                    </div>
+                </div>
+            </nav>
     <div id="mostListened">
       <h2>Most Listened</h2>
       <p>Show More</p>
     </div>
     <div id="suggestions">
       <h2>Suggestions</h2>
+    </div>
     </div>
     <script src="/src/index.js"></script>
   </body>
