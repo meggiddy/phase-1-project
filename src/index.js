@@ -10,18 +10,18 @@ function search(event) {
   let input = document.getElementById("searchbar").value;
   input = input.toLowerCase();
 
-  fetch("http://localhost:3000/movies/")
+  fetch("http://localhost:3000/songs/")
     .then((response) => response.json())
     .then((data) => {
-      const foundMovie = data.find((searchedMovie) => {
-        if (searchedMovie.title.toLowerCase().includes(input.toLowerCase())) {
+      const foundSong = data.find((searchedSong) => {
+        if (searchedSong.title.toLowerCase().includes(input.toLowerCase())) {
           return true;
         } else {
           return false;
         }
       });
-      if (foundMovie) {
-        return showDetails(foundMovie);
+      if (foundSong) {
+        return showDetails(foundSong);
       }
     });
 }
