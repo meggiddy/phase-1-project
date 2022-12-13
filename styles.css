@@ -6,9 +6,13 @@
     box-sizing: border-box;
 }
 body {
-  background-color: rgba(247, 29, 93, 255);
+  background-color: #c06381;
   padding-top: 10px;
-  font-family: 'Poppins' , sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#logo1{
+    width: 30px;
+    padding-bottom: 20px;
 }
 .sidebar {
     position: fixed;
@@ -16,7 +20,7 @@ body {
     top: 0;
     bottom: 0;
     width: 200px;
-    background-color: #ffeef3;
+    background-color: #fcdfe8;
     padding: 24px;
 }
 .sidebar nav ul{
@@ -28,15 +32,40 @@ body {
 .sidebar nav ul li a{
     font-weight: bold;
     color: #834d5d;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
+    letter-spacing: 1px;
 }
-.sidebar nav ul li a:hover,.sidebar nav ul li a.active,.sidebar nav ul li a.active:focus{
+/* sidebar items hover */
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a:active,
+.sidebar nav ul li a:focus{
     text-decoration: none;
+    color: #d18099;
 }
-.sidebar nav ul li a:hover .fa,.sidebar nav ul li a.active .fa,.sidebar nav ul li a.active:focus .fa{
+/* makes the sidebar icons change color on hover */
+.sidebar nav ul li a:hover .fa,
+.sidebar nav ul li a:active .fa,
+.sidebar nav ul li a:focus .fa{
     text-decoration: none;
+    color: #d18099;
 }
+/* makes the icon hover also change the list hover */
+
+.sidebar nav ul li a:hover .fa:hover,
+.sidebar nav ul li a:active .fa:active,
+.sidebar nav ul li a:focus .fa:focus{
+    text-decoration: none;
+    color: #d18099;
+}
+.searchform {
+    width: 400px;
+    display: flex;
+    padding-bottom: 20px;
+}
+/* .sidebar nav li span.fa{
+    padding-right: 10px;
+} */
 .navbar {
   height: 200px;
 }
@@ -50,10 +79,68 @@ input[type="text"] {
   margin: 0 auto;
   padding: 20px;
   border: none;
-  background-color: #ffeef3;
+  background-color: #fcdfe8;
   font-size: 20px;
+  width: 300px;
+}
+#search{
+    width: 120px;
+    border: none;
+    color: #834d5d;
+    font-size: 17px;
+    background-color: #fcdfe8;
+}
+.main-container {
+margin-left: 240px;
+margin-bottom: 100px;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 30px;
+}
+.topbar .menu {
+    display: flex;
+    align-items: center;
+}
+.topbar .menu ul{
+    list-style: none;
+}
+.topbar .menu li {
+    display: inline-block;
+    margin: 0 16px;
+    width: 70px;
+}
+.topbar .menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffb9ce;
 }
 
+.topbar .menu li a:hover,
+.topbar .menu li a:active,
+.topbar .menu li a:focus{
+    color: #d18099;
+    font-size: 15px;
+}
+.topbar .menu li.divider{
+    color: #834d5d;
+    margin: 0 20px;
+    width: auto;
+    font-size: 26px;
+}
+.topbar .menu button{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: #834d5d;
+    color: #fff;
+    margin-left: 20px;
+}
 /* #ffeef3 complementary */
 #mostListened {
   height: 400px;

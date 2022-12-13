@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,64 +9,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <title>Maggify</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <a href=""><img id="logo" src="/assets/logo.svg" alt="Maggify-logo" /></a>
-    </div>
-    
+</head>
+
+<body>
     <header>
         <div class="sidebar">
             <nav>
+                <a href="">
+                    <img id="logo1" src="/assets/logo.svg" alt="Maggify-logo" />
+                </a>
                 <ul>
                     <li>
                         <a href="#">
-                            <span class="fa fa-search">Discover</span>
+                            <span class="fa fa-search">  Discover</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="fa fa-book">MY LIBRARY</span>
+                            <span class="fa fa-book">  My Library</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="fa fa-music">RADIO</span>
+                            <span class="fa fa-music">  Radio</span>
                         </a>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <a href="#">
-                            <span class="fa fas fa-plus-square">Create playlist</span>
+                            <span class="fa fas fa-plus-square">  Create playlist</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="fa fas fa-heart">Liked Songs</span>
+                            <span class="fa fas fa-heart">  Liked Songs</span>
                         </a>
                     </li>
                 </ul>
-                </div>
-                <div class="search">
-                    <form class="searchform">
-                        <input type="text" placeholder="Search Song/Artist.." />
-                        <button type="submit" id="search">Search</button>
-                    </form>
-                    <!-- <div class="user">
-                        <img src="assets/userMaggie.JPG" alt="User" title="Maggie">
-                    </div> -->
-                </div>
-            </nav>
-    <div id="mostListened">
-      <h2>Most Listened</h2>
-      <p>Show More</p>
-    </div>
-    <div id="suggestions">
-      <h2>Suggestions</h2>
+        </div>
+       
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="topbar">
+            <div class="search">
+                <form class="searchform">
+                    <input type="text" placeholder="Search Song/Artist.." />
+                    <button type="submit" id="search">Search</button>
+                </form>
+                <!-- <div class="user">
+                            <img src="assets/userMaggie.JPG" alt="User" title="Maggie">
+                        </div> -->
+            </div>
+            <ul class="menu">
+                <li><a>Download</a></li>
+                <li><a>Support</a></li>
+                <li id="divider">|</li>
+                <li><a>Sign Up</a></li>
+                <button>Log In</button>
+                
+            </ul>
+        </div>
+        <div id="mostListened">
+            <h2>Most Listened</h2>
+            <p>Show More</p>
+        </div>
+        <div id="suggestions">
+            <h2>Suggestions</h2>
+        </div>
     </div>
     </div>
     <script src="/src/index.js"></script>
     <script src="https://kit.fontawesome.com/1918c821e7.js" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
