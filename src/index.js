@@ -18,7 +18,7 @@ fetch(
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
  */
-const showDetails = function (element) {
+/* const showDetails = function (element) {
   const image = document.getElementById("coverImg");
   image.src = element.poster;
   const name = document.getElementById("title");
@@ -42,7 +42,7 @@ fetch(
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
-
+ */
 /* //browse featured
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
