@@ -20,7 +20,7 @@ body {
     top: 0;
     bottom: 0;
     width: 200px;
-    background-color: #fcdfe8;
+    background-color: #da7695;
     padding: 24px;
 }
 .sidebar nav ul{
@@ -31,32 +31,34 @@ body {
 }
 .sidebar nav ul li a{
     font-weight: bold;
-    color: #834d5d;
+    color: #000000;
     font-size: 16px;
     text-decoration: none;
-    letter-spacing: 1px;
+    line-height: 2;
+    letter-spacing: 3px;
+    padding: 17px;
 }
 /* sidebar items hover */
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a:active,
 .sidebar nav ul li a:focus{
     text-decoration: none;
-    color: #d18099;
+    color: #ffc7d9;
 }
 /* makes the sidebar icons change color on hover */
 .sidebar nav ul li a:hover .fa,
 .sidebar nav ul li a:active .fa,
 .sidebar nav ul li a:focus .fa{
     text-decoration: none;
-    color: #d18099;
+    color: #ffc7d9;
 }
 /* makes the icon hover also change the list hover */
 
-.sidebar nav ul li a:hover .fa:hover,
-.sidebar nav ul li a:active .fa:active,
-.sidebar nav ul li a:focus .fa:focus{
+.sidebar nav ul li .fa:hover a:hover ,
+.sidebar nav ul li .fa:active a:active ,
+.sidebar nav ul li .fa:focus a:focus {
     text-decoration: none;
-    color: #d18099;
+    color: #ffc7d9;
 }
 .searchform {
     width: 400px;
@@ -122,11 +124,11 @@ margin-bottom: 100px;
 .topbar .menu li a:hover,
 .topbar .menu li a:active,
 .topbar .menu li a:focus{
-    color: #d18099;
+    color: #f8f8f8;
     font-size: 15px;
 }
 .topbar .menu li.divider{
-    color: #834d5d;
+    color: #e789a5;
     margin: 0 20px;
     width: auto;
     font-size: 26px;
