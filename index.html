@@ -65,11 +65,48 @@
         <div id="mostListened">
             <h2>Most Listened</h2>
             <p>Show More</p>
-            <div id="mostSong">
+            <!-- <div id="mostSong">
                 <img id="coverImg" />
                 <h4 id="title"></h4>
-                <p id="details"></p>
+                <p id="details"></p> -->
+
+                <div class="app-wrapper">
+                    <div class="player">
+                        <div class="song-img" style="background-image: url('./images/song-1.jpg');"></div>
+                        <div class="song-details">
+                            <h2>Forget me too ft. Halsey</h2>
+                            <h3>Machine Gun Kelly</h3>
+                        </div>
+                        <div class="player-controls">
+                            <button class="skip-btn skip-back fa-lg"><i class="fas fa-backward"></i></button>
+                            <button class="play"><i class="fas fa-play fa-2x"></i></button>
+                            <button class="skip-btn skip-back fa-lg"><i class="fas fa-forward"></i></button>
+                        </div>
+                        <div class="next-up">
+                            <p>Next up: <span>Kindest Regards by Witt Lowry</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="app-wrapper">
+                <div class="player">
+                    <div id="song-image" class="song-img" style="background-image: url('./images/song-1.jpg');"></div>
+                    <audio id="music-player"></audio>
+                    <div class="song-details">
+                        <h2 id="song-title">Forget me too ft. Halsey</h2>
+                        <h3 id="song-artist">Machine Gun Kelly</h3>
+                    </div>
+                    <div class="player-controls">
+                        <button id="prev-btn" class="skip-btn"><i class="fas fa-backward fa-lg"></i></button>
+                        <button id="play-btn" class="play"><i id="play-icon" class="fas fa-play fa-2x"></i></button>
+                        <button id="next-btn" class="skip-btn"><i class="fas fa-forward fa-lg"></i></button>
+                    </div>
+                    <div class="next-up">
+                        <p>Next up: <span id="song-next-up">Kindest Regards by Witt Lowry</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <div id="suggestions">
             <h2>Suggestions</h2>

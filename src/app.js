@@ -1,8 +1,8 @@
-var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
+import express from 'express'; // Express web server framework
+import request from 'request'; // "Request" library
+import cors from 'cors';
+import querystring from 'querystring';
+import cookieParser from 'cookie-parser';
 
 var redirect_uri = "http://127.0.0.1:5500/index.html"
 

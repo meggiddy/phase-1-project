@@ -1,3 +1,41 @@
+window.onload = ()=> {
+  const song_img_el = document.getElementById("song-image")
+  const song_title_el = document.getElementById("song-title")
+  const song_artist_el = document.getElementById("song-artist")
+  const song_next_up_el = document.getElementById("song-next-up")
+  
+  const play_btn = document.getElementById("play-btn")
+  const play_btn_icon = document.getElementById("play-icon")
+  const prev_btn = document.getElementById("prev-btn")
+  const next_btn = document.getElementById("next-btn")
+
+  const audio_player = document.getElementById("music-player")
+  let current_song_index;
+  let next_song_index;
+
+  let songs = [
+    {
+      title: "Song 1",
+      artist: "Artist 1",
+      img_path: "image/",
+      song_path: "/audio/"
+    },
+    {}
+  ]
+
+  InitPlayer()
+  function InitPlayer() {
+    current_song_index = 0;
+    next_song_index = current_song_index + 1;
+    updatePlayer();
+  }
+
+  function updatePlayer() {
+    let song = songs[current_song_index];
+  }
+} 
+
+
 /* const auth_url =
   //this encases the user details for log in and playlist libraries
   "https://accounts.spotify.com/authorize?client_id=d77a612fe4bb426591fb2db65947cb74&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
