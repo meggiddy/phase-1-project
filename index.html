@@ -1,100 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <script src="https://kit.fontawesome.com/1918c821e7.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1918c821e7.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Maggify</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="sidebar">
-            <nav>
-                <a href="">
-                    <img id="logo1" src="/assets/logo.svg" alt="Maggify-logo" />
-                </a>
-                <ul>
-                    <li>
-                        <span class="fa fa-search"><a href="#"> Discover</a></span>
-                    </li>
-                    <li>
-                        <span class="fa fa-book"><a href="#"> My Library</a></span>
-                    </li>
-                    <li>
-                        <span class="fa fa-music"><a href="#">Radio</a></span>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <span class="fa fas fa-plus-square"><a href="#">Create playlist</a></span>
-                    </li>
-                    <li>
-                        <span class="fa fas fa-heart"><a href="#"> Liked Songs</a></span>
-                    </li>
-                </ul>
-        </div>
-       
+      <div class="sidebar">
+        <nav>
+          <a href="">
+            <img id="logo1" src="/assets/logo.svg" alt="Maggify-logo" />
+          </a>
+          <ul>
+            <li>
+              <span class="fa fa-search"><a href="#"> Discover</a></span>
+            </li>
+            <li>
+              <span class="fa fa-book"><a href="#"> My Library</a></span>
+            </li>
+            <li>
+              <span class="fa fa-music"><a href="#">Radio</a></span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <span class="fa fas fa-plus-square"
+                ><a href="#">Create playlist</a></span
+              >
+            </li>
+            <li>
+              <span class="fa fas fa-heart"><a id="likedSongs" href="#"> Liked Songs</a></span>
+              <ul id="songList"></ul>
+            </li>
+          </ul>
         </nav>
+      </div>
     </header>
 
     <div class="main-container">
-        <div class="topbar">
-            <div class="search">
-                <form class="searchform">
-                    <input type="text" placeholder="Search Song/Artist.." />
-                    <button type="submit" id="search">Search</button>
-                </form>
-                <!-- <div class="user">
-                            <img src="assets/userMaggie.JPG" alt="User" title="Maggie">
-                        </div> -->
-            </div>
-            <ul class="menu">
-                <li><a>Download</a></li>
-                <li><a>Support</a></li>
-                <li id="divider">|</li>
-                <li><a>Sign Up</a></li>
-                <button id="logIn">Log In</button>
-                
-            </ul>
+      <div class="topbar">
+        <div class="search">
+          <form class="searchform">
+            <input type="text" placeholder="Search Song/Artist.." />
+            <button type="submit" id="search">Search</button>
+          </form>
         </div>
-        <!-- <div id="mostListened">
-            <h2>Most Listened</h2>
-            <p>Show More</p> -->
-            <div class="app-wrapper">
-                <div class="player">
-                    <div id="song-image" class="song-img"></div>
-                    <audio id="music-player"></audio>
-                    <div class="song-details">
-                        <h2 id="song-title"></h2>
-                        <h3 id="song-artist"></h3>
-                    </div>
-                    <div class="player-controls">
-                        <button id="prev-btn" class="skip-btn"><i class="fas fa-backward fa-lg"></i></button>
-                        <button id="play-btn" class="play"><i id="play-icon" class="fas fa-play fa-2x"></i></button>
-                        <button id="next-btn" class="skip-btn"><i class="fas fa-forward fa-lg"></i></button>
-                        
-                    </div>
-                    <div id="like-btn">
-                        <button id="like"><i id="like-btn-icon" class="fa fas fa-heart"></i></button>
-                    </div>
-                    <div class="next-up">
-                        <p>Next up: <span id="song-next-up">Kindest Regards by Witt Lowry</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- </div> -->
-        <div id="suggestions">
-            <h2>Suggestions</h2>
-        </div>
+        <ul class="menu">
+          <li><a>Download</a></li>
+          <li><a>Support</a></li>
+          <li id="divider">|</li>
+          <li><a>Sign Up</a></li>
+          <button id="logIn">Log In</button>
+        </ul>
+      </div>
     </div>
+    <div class="app-wrapper">
+      <div class="player">
+        <div id="song-image" class="song-img"></div>
+        <audio id="music-player"></audio>
+        <div class="song-details">
+          <h2 id="song-title"></h2>
+          <h3 id="song-artist"></h3>
+        </div>
+        <div class="player-controls">
+          <button id="prev-btn" class="skip-btn">
+            <i class="fas fa-backward fa-lg"></i>
+          </button>
+          <button id="play-btn" class="play">
+            <i id="play-icon" class="fas fa-play fa-2x"></i>
+          </button>
+          <button id="next-btn" class="skip-btn">
+            <i class="fas fa-forward fa-lg"></i>
+          </button>
+        </div>
+        <div id="like-btn">
+          <button id="like">
+            <i id="like-btn-icon" class="fa fas fa-heart"></i>
+          </button>
+        </div>
+        <div class="next-up">
+          <p>
+            Next up:
+            <span id="song-next-up"></span>
+          </p>
+        </div>
+      </div>
     </div>
     <script type="module" src="/src/index.js"></script>
-</body>
-
+  </body>
 </html>
