@@ -11,6 +11,15 @@ window.onload = () => {
         window.sessionStorage.setItem("accessToken", data.accessToken);
         window.sessionStorage.setItem("refreshToken", data.refreshToken);
         window.sessionStorage.setItem("expiresIn", data.expiresIn);
+
+        fetch("https://api.spotify.com/v1/me/albums", {
+          method: "GET",
+          headers: { Authorization: "Bearer " + data.accessToken },
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            console.log(responseData);
+          });
       });
 
     const song_img_el = document.getElementById("song-image");
