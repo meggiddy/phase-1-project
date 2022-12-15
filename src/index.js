@@ -4,6 +4,10 @@ window.onload = () => {
   const song_artist_el = document.getElementById("song-artist");
   const song_next_up_el = document.getElementById("song-next-up");
 
+  const song_img = document.getElementById("song-image1");
+  const song_title = document.getElementById("song-title1");
+  const song_artist = document.getElementById("song-artist1");
+
   const play_btn = document.getElementById("play-btn");
   const play_btn_icon = document.getElementById("play-icon");
   const prev_btn = document.getElementById("prev-btn");
@@ -11,10 +15,11 @@ window.onload = () => {
   const like_btn = document.getElementById("like");
   const like_btn_icon = document.getElementById("like-btn-icon");
 
-  const songList = document.getElementById('songList');
+  const songList = document.getElementById("songList");
+    songList.style.display = "none";
   const liked_Songs = document.getElementById("likedSongs");
   liked_Songs.addEventListener("click", () => {
-    if (songList.style.display == "none") {
+    if (songList.style.display === "none") {
       songList.style.display = "block";
     } else {
       songList.style.display = "none";
@@ -79,18 +84,21 @@ window.onload = () => {
   });
 
   prev_btn.addEventListener("click", () => ChangeSong(false)); //passes false to next
+
   like_btn.addEventListener("click", () => {
     like_btn_icon.classList.toggle("fa-heart");
     like_btn_icon.classList.toggle("fa-heart-crack");
 
     let song = songs[current_song_index];
-    const likeSongTitle = document.createElement(li);
-    const likeSongArtist = document.createElement(li);
-
+    const likeSongTitle = document.createElement("li");
+    likeSongTitle.addEventListener("click", () => updatePlayer);
+    //on click play song
     likeSongTitle.innerHTML = song.title;
-    likeSongArtist.innerHTML = song.artist;
     songList.append(likeSongTitle);
-    songList.append(likeSongArtist);
+    
+    song_img.style = "background-image: url('" + song.img_path + "')";
+    song_title.innerHTML = song.title;
+    song_artist.innerHTML = song.artist;
   });
 
   InitPlayer();
@@ -150,84 +158,8 @@ window.onload = () => {
   }
 };
 
-/* const auth_url =
-  //this encases the user details for log in and playlist libraries
-  "https://accounts.spotify.com/authorize?client_id=d77a612fe4bb426591fb2db65947cb74&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
-//search fetch
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-var requestOptions = {
-  method: "get",
-  headers: myHeaders,
-  redirect: "follow",
-};
 
-fetch(
-  "https://v1.nocodeapi.com/meg/spotify/WxqfUgoapfCmlvIu/search?q=<q>",
-  requestOptions
-)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.log("error", error));
- */
-/* const showDetails = function (element) {
-  const image = document.getElementById("coverImg");
-  image.src = element.poster;
-  const name = document.getElementById("title");
-  name.innerHTML = element.title;
-  const details = document.getElementById("details");
-  details.innerHTML = element.capacity;
-};
-//browse categories
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-var requestOptions = {
-  method: "get",
-  headers: myHeaders,
-  redirect: "follow",
-};
-
-fetch(
-  "https://v1.nocodeapi.com/meg/spotify/WxqfUgoapfCmlvIu/browse/categories",
-  requestOptions
-)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.log("error", error));
- */
-/* //browse featured
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-var requestOptions = {
-  method: "get",
-  headers: myHeaders,
-  redirect: "follow",
-};
-
-fetch(
-  "https://v1.nocodeapi.com/meg/spotify/WxqfUgoapfCmlvIu/browse/featured",
-  requestOptions
-)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.log("error", error));
-//new releases
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-var requestOptions = {
-  method: "get",
-  headers: myHeaders,
-  redirect: "follow",
-};
-
-fetch(
-  "https://v1.nocodeapi.com/meg/spotify/WxqfUgoapfCmlvIu/browse/new",
-  requestOptions
-)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.log("error", error));
-
+/*
 //search bar
 const searchBtn = document.getElementById("search");
 searchBtn.addEventListener("click", search);
