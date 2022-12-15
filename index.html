@@ -28,7 +28,9 @@
               <span class="fa fa-search"><a href="#"> Discover</a></span>
             </li>
             <li>
-              <span class="fa fa-book"><a href="#"> My Library</a></span>
+              <span class="fa fa-book"
+                ><a id="myLib" href="#"> My Library</a></span
+              >
             </li>
             <li>
               <span class="fa fa-music"><a href="#">Radio</a></span>
@@ -64,7 +66,11 @@
           <li><a>Support</a></li>
           <li id="divider">|</li>
           <li><a>Sign Up</a></li>
-          <button id="logIn">Log In</button>
+          <a
+            href="https://accounts.spotify.com/authorize?client_id=d77a612fe4bb426591fb2db65947cb74&response_type=code&redirect_uri=http://localhost:3001&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
+            id="logIn"
+            >Log In</a
+          >
         </ul>
       </div>
     </div>
