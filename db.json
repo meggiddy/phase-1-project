@@ -41,6 +41,30 @@
       "artist": "Vibration",
       "img_path": "image/",
       "song_path": "/audio/Makaih Beats - Vibration.mp3"
+    },
+    {
+      "title": "We Wish You a Merry Christmas",
+      "artist": "Dee Yan-Key",
+      "img_path": "/images/img4.jpg",
+      "song_path": "/audio/Dee Yan-Key - We Wish You a Merry Christmas.mp3"
+    },
+    {
+      "title": "From-Pillar-To-Post",
+      "artist": "Kesta",
+      "img_path": "/images/img5.jpg",
+      "song_path": "/audio/Ketsa - From-Pillar-To-Post.mp3"
+    },
+    {
+      "title": "Our Sunny Dance",
+      "artist": "Lobo Loco",
+      "img_path": "/images/img6.jpg",
+      "song_path": "/audio/Lobo Loco - Our Sunny Dance (ID 1857).mp3"
+    },
+    {
+      "title": "Makaih Beats",
+      "artist": "Vibration",
+      "img_path": "/images/",
+      "song_path": "/audio/Makaih Beats - Vibration.mp3"
     }
   ]
 }

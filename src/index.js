@@ -8,6 +8,8 @@ window.onload = () => {
   const play_btn_icon = document.getElementById("play-icon");
   const prev_btn = document.getElementById("prev-btn");
   const next_btn = document.getElementById("next-btn");
+  const like_btn = document.getElementById("like");
+  const like_btn_icon = document.getElementById("like-btn-icon");
 
   const audio_player = document.getElementById("music-player");
   let current_song_index;
@@ -15,10 +17,10 @@ window.onload = () => {
 
   let songs = [
     {
-      "title": "Nostalgia",
-      "artist": "Makaih Beats",
-      "img_path": "/images/img1.jpg",
-      "song_path": "/audio/Makaih Beats - Nostalgia.mp3"
+      title: "Nostalgia",
+      artist: "Makaih Beats",
+      img_path: "/images/img1.jpg",
+      song_path: "/audio/Makaih Beats - Nostalgia.mp3",
     },
     {
       title: "Welcome",
@@ -33,34 +35,47 @@ window.onload = () => {
       song_path: "/audio/Rocky Marsiano - Oi Kompadri (instrumental).mp3",
     },
     {
-      "title": "We Wish You a Merry Christmas",
-      "artist": "Dee Yan-Key",
-      "img_path": "/images/img4.jpg",
-      "song_path": "/audio/Dee Yan-Key - We Wish You a Merry Christmas.mp3"
+      title: "We Wish You a Merry Christmas",
+      artist: "Dee Yan-Key",
+      img_path: "/images/img4.jpg",
+      song_path: "/audio/Dee Yan-Key - We Wish You a Merry Christmas.mp3",
     },
     {
-      "title": "From-Pillar-To-Post",
-      "artist": "Kesta",
-      "img_path": "/images/img5.jpg",
-      "song_path": "/audio/Ketsa - From-Pillar-To-Post.mp3"
+      title: "From-Pillar-To-Post",
+      artist: "Kesta",
+      img_path: "/images/img5.jpg",
+      song_path: "/audio/Ketsa - From-Pillar-To-Post.mp3",
     },
     {
-      "title": "Our Sunny Dance",
-      "artist": "Lobo Loco",
-      "img_path": "/images/img6.jpg",
-      "song_path": "/audio/Lobo Loco - Our Sunny Dance (ID 1857).mp3"
+      title: "Our Sunny Dance",
+      artist: "Lobo Loco",
+      img_path: "/images/img6.jpg",
+      song_path: "/audio/Lobo Loco - Our Sunny Dance (ID 1857).mp3",
     },
     {
-      "title": "Makaih Beats",
-      "artist": "Vibration",
-      "img_path": "/images/",
-      "song_path": "/audio/Makaih Beats - Vibration.mp3"
-    }
+      title: "Makaih Beats",
+      artist: "Vibration",
+      img_path: "/images/",
+      song_path: "/audio/Makaih Beats - Vibration.mp3",
+    },
   ];
 
   play_btn.addEventListener("click", TogglePlaySong);
   next_btn.addEventListener("click", () => ChangeSong());
   prev_btn.addEventListener("click", () => ChangeSong(false)); //passes false to next
+  like_btn.addEventListener("click", (e) => {
+    e.target.classList.toggle("fa-heart-crack");
+  });
+  /*     if (like) {
+      // unlike();
+      like_btn_icon.classList.remove("fa-heart");
+      like_btn_icon.classList.add("fa-heart-crack");
+    } else {
+      // like();
+      like_btn_icon.classList.remove("fa-heart-crack");
+      like_btn_icon.classList.add("fa-heart");
+    }
+  }); */
 
   InitPlayer();
   function InitPlayer() {

@@ -245,7 +245,7 @@ margin-bottom: 100px;
     cursor: pointer;
     outline: none;
 
-    color: #CCC;
+    color: rgba(254, 72, 128, 0.8);
 }
 
 .player-controls .play:hover {
@@ -253,10 +253,11 @@ margin-bottom: 100px;
 }
 
 .next-up p {
-    color: #888;
+    color: rgba(254, 72, 128, 0.8);
     text-align: center;
     font-weight: 500;
     font-size: 16px;
+    padding-top: 15px;
 }
 
 .next-up p span {
@@ -270,4 +271,23 @@ margin-bottom: 100px;
         border-radius: 0px;
         padding: 75px 30px;
     }
+}
+#like {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: rgba(254, 72, 128, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 125px;
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px rgb(254 72 128 / 60%);
+    transition: 0.4s;
+    
 }

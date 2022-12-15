@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
+    <script src="https://kit.fontawesome.com/1918c821e7.js" crossorigin="anonymous"></script>
     <title>Maggify</title>
 </head>
 
@@ -58,7 +58,7 @@
                 <li><a>Support</a></li>
                 <li id="divider">|</li>
                 <li><a>Sign Up</a></li>
-                <button id="logIn" onclick="requestAuthorization()">Log In</button>
+                <button id="logIn">Log In</button>
                 
             </ul>
         </div>
@@ -77,6 +77,10 @@
                         <button id="prev-btn" class="skip-btn"><i class="fas fa-backward fa-lg"></i></button>
                         <button id="play-btn" class="play"><i id="play-icon" class="fas fa-play fa-2x"></i></button>
                         <button id="next-btn" class="skip-btn"><i class="fas fa-forward fa-lg"></i></button>
+                        
+                    </div>
+                    <div id="like-btn">
+                        <button id="like"><i id="like-btn-icon" class="fa fas fa-heart"></i></button>
                     </div>
                     <div class="next-up">
                         <p>Next up: <span id="song-next-up">Kindest Regards by Witt Lowry</span></p>
@@ -91,7 +95,6 @@
     </div>
     </div>
     <script type="module" src="/src/index.js"></script>
-    <script src="https://kit.fontawesome.com/1918c821e7.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
