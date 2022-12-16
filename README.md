@@ -18,11 +18,14 @@ I also use :-
     -CSS
 # Installation
 Here are the installation steps:
-
-    $ git clone https://example.com
-    $ cd ../path/to/the/file
+    $ open https://developer.spotify.com/ and create/ login to an account.
+    $ on the dashboard you will see CLIENT_ID and CLIENT_SECRET.
+    $ git clone git@github.com:meggiddy/phase-1-project.git
+    $ cd ./phase-1-project
     $ npm install
-    $ npm start
+    $ CLIENT_ID=<your-spotify-client-ID> CLIENT_SECRET=<your-spotify-client-secret> REDIRECT_URI=http://localhost:3001 node src/server.js 
+    $ open http://localhost:3001 in browser, click login to connect to your spotify.
+    $ after the authentication redirect click on my library to see your library.
 
 # Author
 Code written by Maggie- Aka Meggiddy!
