@@ -14,7 +14,7 @@ window.onload = () => {
 
         fetch("https://api.spotify.com/v1/me/albums", {
           method: "GET",
-          headers: { Authorization: "Bearer " + data.accessToken },
+          headers: { "Content-Type": "application/json" },
         })
           .then((response) => response.json())
           .then((responseData) => {
@@ -199,31 +199,39 @@ window.onload = () => {
     updatePlayer();
     TogglePlaySong();
   }
-};
 
-/*
-//search bar
-const searchBtn = document.getElementById("search");
-searchBtn.addEventListener("click", search);
-const form = document.querySelector(".searchform");
-function search(event) {
-  event.preventDefault();
-  let input = document.getElementById("searchbar").value;
-  input = input.toLowerCase();
-
-  fetch("http://localhost:3000/songs/")
-    .then((response) => response.json())
-    .then((data) => {
-      const foundSong = data.find((searchedSong) => {
-        if (searchedSong.title.toLowerCase().includes(input.toLowerCase())) {
-          return true;
-        } else {
-          return false;
-        }
+  //search bar
+  const searchBtn = document.getElementById("search");
+  searchBtn.addEventListener("click", search);
+  const form = document.querySelector(".searchform");
+  function search(query) {
+    fetch("https://api.spotify.com/v1/me/albums", {
+      method: "GET",
+      headers: ""
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        // search for albums that match the query
+        const results = [];
+        responseData.items.forEach(({ album }) => {
+          if (album.name.toLowerCase().includes(query.toLowerCase())) {
+            results.push(album);
+          }
+        });
+        // display the search results
+        displayResults(results);
       });
-      if (foundSong) {
-        return showDetails(foundSong);
-      }
+  }
+
+  function displayResults(results) {
+    // clear the previous results
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+    // add the new results
+    results.forEach((album) => {
+      const albumElement = document.createElement("div");
+      albumElement.innerHTML = album.name;
+      resultsContainer.appendChild(albumElement);
     });
-}
- */
+  }
+};
