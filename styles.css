@@ -22,6 +22,7 @@ body {
     width: 200px;
     background-color: #da7695;
     padding: 24px;
+    z-index: 2;
 }
 .sidebar nav ul{
     list-style: none;
@@ -364,3 +365,24 @@ margin-bottom: 100px;
     text-align: center;
     padding-top: 50px;
 }
+
+#lib-folder {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(254, 72, 128);
+    color: #fff;
+    transition: left 0.3s;
+  }
+  #lib-folder.open {
+    left: 200px;
+  }
+  #lib-folder li{
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+    text-align: center;
+    
+  }
