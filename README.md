@@ -11,7 +11,7 @@ Some of my dependencies on npm install are:-
     "querystring": "^0.2.1",
     "request": "^2.88.2",
     "spotify-web-api-node": "^5.0.2"
-    
+
 I also use :-
     -HTML
     -JS
@@ -23,3 +23,9 @@ Here are the installation steps:
     $ cd ../path/to/the/file
     $ npm install
     $ npm start
+
+# Author
+Code written by Maggie- Aka Meggiddy!
+
+# License
+GNU General Public License v3.0 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
