@@ -1,94 +1,22 @@
 window.onload = () => {
-  const code = new URLSearchParams(window.location.search).get("code");
-  if (code) {
-    fetch("http://localhost:3001/login", {
-      method: "POST",
-      body: JSON.stringify({ code }),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        window.sessionStorage.setItem("accessToken", data.accessToken);
-        window.sessionStorage.setItem("refreshToken", data.refreshToken);
-        window.sessionStorage.setItem("expiresIn", data.expiresIn);
-
-        fetch("https://api.spotify.com/v1/me/albums", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + data.accessToken,
-          },
-        })
-          .then((response) => response.json())
-          .then((responseData) => {
-            // map items to DOM nodes
-            const Library = document.getElementById("myLib");
-            const myLibrary = document.createElement("ul");
-
-            responseData.items.forEach(({ album }) => {
-              // access the album's name and artist's name directly
-              const albumName = document.createElement("li");
-              albumName.innerHTML = album.name;
-              const artistName = document.createElement("li");
-              artistName.innerHTML = album.artists[0].name; // assuming the first artist is the main artist
-              myLibrary.appendChild(albumName);
-              myLibrary.appendChild(artistName);
-              artistName.style.fontSize = "10px";
-              artistName.style.borderBottom = "1px solid #834d5d";
-              const lib = document.getElementById("lib-folder");
-              lib.append(myLibrary);
-              Library.addEventListener("click", function () {
-                //close the library
-                lib.classList.toggle("open");
-              });
-            });
-            fetch("https://api.spotify.com/v1/me/playlists", {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + data.accessToken,
-              },
-            })
-              .then((response) => response.json())
-              .then((responseData) => {
-                console.log(responseData);
-                // map items to DOM nodes
-                const createdPlaylists =
-                  document.getElementById("createPlaylist");
-                const playlist = document.createElement("ul");
-                const lib = document.getElementById("playlist-folder");
-                responseData.items.forEach(({ name }) => {
-                  const li = document.createElement("li");
-                  li.innerHTML = name;
-                  playlist.appendChild(li);
-                  lib.append(playlist);
-                  createdPlaylists.addEventListener("click", () => {
-                    //close the playlist
-                    lib.classList.toggle("open");
-                  });
-                });
-              });
-          });
-      });
-
     const song_img_el = document.getElementById("song-image");
     const song_title_el = document.getElementById("song-title");
     const song_artist_el = document.getElementById("song-artist");
     const song_next_up_el = document.getElementById("song-next-up");
-
+  
     const song_img = document.getElementById("song-image1");
     const song_title = document.getElementById("song-title1");
     const song_artist = document.getElementById("song-artist1");
-
+  
     const play_btn = document.getElementById("play-btn");
     const play_btn_icon = document.getElementById("play-icon");
     const prev_btn = document.getElementById("prev-btn");
     const next_btn = document.getElementById("next-btn");
     const like_btn = document.getElementById("like");
     const like_btn_icon = document.getElementById("like-btn-icon");
-
+  
     const songList = document.getElementById("songList");
-    songList.style.display = "none";
+      songList.style.display = "none";
     const liked_Songs = document.getElementById("likedSongs");
     liked_Songs.addEventListener("click", () => {
       if (songList.style.display === "none") {
@@ -97,11 +25,11 @@ window.onload = () => {
         songList.style.display = "none";
       }
     });
-
+  
     const audio_player = document.getElementById("music-player");
     let current_song_index;
     let next_song_index;
-
+  
     let songs = [
       {
         title: "Nostalgia",
@@ -146,52 +74,52 @@ window.onload = () => {
         song_path: "/audio/Makaih Beats - Vibration.mp3",
       },
     ];
-
+  
     play_btn.addEventListener("click", TogglePlaySong);
-
+  
     next_btn.addEventListener("click", () => {
       ChangeSong();
       like_btn_icon.classList.toggle("fa-heart");
       like_btn_icon.classList.toggle("fa-heart-crack");
     });
-
+  
     prev_btn.addEventListener("click", () => ChangeSong(false)); //passes false to next
-
+  
     like_btn.addEventListener("click", () => {
       like_btn_icon.classList.toggle("fa-heart");
       like_btn_icon.classList.toggle("fa-heart-crack");
-
+  
       let song = songs[current_song_index];
       const likeSongTitle = document.createElement("li");
       likeSongTitle.addEventListener("click", () => updatePlayer);
       //on click play song
       likeSongTitle.innerHTML = song.title;
       songList.append(likeSongTitle);
-
+      
       song_img.style = "background-image: url('" + song.img_path + "')";
       song_title.innerHTML = song.title;
       song_artist.innerHTML = song.artist;
     });
-
+  
     InitPlayer();
     function InitPlayer() {
       current_song_index = 0;
       next_song_index = current_song_index + 1;
       updatePlayer();
     }
-
+  
     function updatePlayer() {
       let song = songs[current_song_index];
-
+  
       song_img_el.style = "background-image: url('" + song.img_path + "')";
       song_title_el.innerHTML = song.title;
       song_artist_el.innerHTML = song.artist;
       song_next_up_el.innerHTML =
         songs[next_song_index].title + " by " + songs[next_song_index].artist;
-
+  
       audio_player.src = song.song_path;
     }
-
+  
     function TogglePlaySong() {
       if (audio_player.paused) {
         audio_player.play();
@@ -203,7 +131,7 @@ window.onload = () => {
         play_btn_icon.classList.add("fa-play");
       }
     }
-
+  
     function ChangeSong(next = true) {
       //check if next songs are within the song limit
       if (next) {
@@ -224,44 +152,36 @@ window.onload = () => {
           next_song_index = 0;
         }
       }
-
+  
       updatePlayer();
       TogglePlaySong();
     }
-
-    //search bar
-    const searchBtn = document.getElementById("search");
-    searchBtn.addEventListener("click", search);
-    const form = document.querySelector(".searchform");
-    function search(query) {
-      fetch("https://api.spotify.com/v1/me", {
-        method: "GET",
-        headers: "",
-      })
-        .then((response) => response.json())
-        .then((responseData) => {
-          // search for albums that match the query
-          const results = [];
-          responseData.items.forEach(({ album }) => {
-            if (album.name.toLowerCase().includes(query.toLowerCase())) {
-              results.push(album);
-            }
-          });
-          // display the search results
-          displayResults(results);
+  };
+  
+  
+  /*
+  //search bar
+  const searchBtn = document.getElementById("search");
+  searchBtn.addEventListener("click", search);
+  const form = document.querySelector(".searchform");
+  function search(event) {
+    event.preventDefault();
+    let input = document.getElementById("searchbar").value;
+    input = input.toLowerCase();
+  
+    fetch("http://localhost:3000/songs/")
+      .then((response) => response.json())
+      .then((data) => {
+        const foundSong = data.find((searchedSong) => {
+          if (searchedSong.title.toLowerCase().includes(input.toLowerCase())) {
+            return true;
+          } else {
+            return false;
+          }
         });
-    }
-
-    function displayResults(results) {
-      // clear the previous results
-      const resultsContainer = document.getElementById("results");
-      resultsContainer.innerHTML = "";
-      // add the new results
-      results.forEach((album) => {
-        const albumElement = document.createElement("div");
-        albumElement.innerHTML = album.name;
-        resultsContainer.appendChild(albumElement);
+        if (foundSong) {
+          return showDetails(foundSong);
+        }
       });
-    }
   }
-};
+   */

@@ -25,7 +25,7 @@ Here are the installation steps:
     $ npm install
     $ CLIENT_ID=<your-spotify-client-ID> CLIENT_SECRET=<your-spotify-client-secret> REDIRECT_URI=http://localhost:3001 node src/server.js 
     $ open http://localhost:3001 in browser, click login to connect to your spotify.
-    $ after the authentication redirect click on my library to see your library.
+    $ after the authentication redirect click on my library to see your library
 
 # Author
 Code written by Maggie- Aka Meggiddy!
