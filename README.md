@@ -1,6 +1,7 @@
 # phase-1-project
 
-This is a simple Spotify application that can play music without logging in or just log in to Spotify and play your own music.
+This is a simple Spotify application that can play musicon  log in to Spotify and play your own music.
+The spotify-clone requires that you login to Spotify every 3600 seconds.
 It was a very tall order being a beginner however I'm still working on it.
 I did two versions of my project. One that relies only on the Spotify API other one doesnt require logins and has music within it.
 N/B Simpler-project Folder contains the code for the non spotify project.
@@ -17,7 +18,7 @@ Some of my dependencies on npm install are:-
 "request": "^2.88.2",
 "spotify-web-api-node": "^5.0.2"
 
-I also use :-
+I use :-
 -HTML
 -JS
 -CSS

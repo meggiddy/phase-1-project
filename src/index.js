@@ -42,35 +42,70 @@ window.onload = () => {
                 lib.classList.toggle("open");
               });
             });
-            fetch("https://api.spotify.com/v1/me/playlists", {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + data.accessToken,
-              },
-            })
-              .then((response) => response.json())
-              .then((responseData) => {
-                console.log(responseData);
-                // map items to DOM nodes
-                const createdPlaylists =
-                  document.getElementById("createPlaylist");
-                const playlist = document.createElement("ul");
-                const lib = document.getElementById("playlist-folder");
-                responseData.items.forEach(({ name }) => {
-                  const li = document.createElement("li");
-                  li.innerHTML = name;
-                  playlist.appendChild(li);
-                  lib.append(playlist);
-                  createdPlaylists.addEventListener("click", () => {
-                    //close the playlist
-                    lib.classList.toggle("open");
-                  });
-                });
+          });
+        fetch("https://api.spotify.com/v1/me/playlists", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + data.accessToken,
+          },
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            // map items to DOM nodes
+            const createdPlaylists = document.getElementById("createPlaylist");
+            const playlist = document.createElement("ul");
+            const lib = document.getElementById("playlist-folder");
+            responseData.items.forEach(({ name }) => {
+              const li = document.createElement("li");
+              li.innerHTML = name;
+              playlist.appendChild(li);
+              lib.append(playlist);
+              createdPlaylists.addEventListener("click", () => {
+                //close the playlist
+                lib.classList.toggle("open");
               });
+            });
+          });
+        function updatePlayer() {
+          fetch("https://api.spotify.com/v1/browse/featured-playlists", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + data.accessToken,
+            },
+          })
+            .then((response) => response.json())
+            .then((responseData) => {
+              console.log(responseData);
+              song_img_el.style =
+                "background-image: url('" + song.img_path + "')";
+              song_title_el.innerHTML = song.title;
+              song_artist_el.innerHTML = song.artist;
+              song_next_up_el.innerHTML =
+                songs[next_song_index].title +
+                " by " +
+                songs[next_song_index].artist;
+
+              audio_player.src = song.song_path;
+            });
+        }
+        //previous button
+        fetch("https://api.spotify.com/v1/me/player/previous", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + data.accessToken,
+          },
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            const backBtn = document.getElementById("prev-btn");
+            backBtn.addEventListener("click", () => {
+              responseData;
+            });
           });
       });
-
     const song_img_el = document.getElementById("song-image");
     const song_title_el = document.getElementById("song-title");
     const song_artist_el = document.getElementById("song-artist");
@@ -155,8 +190,6 @@ window.onload = () => {
       like_btn_icon.classList.toggle("fa-heart-crack");
     });
 
-    prev_btn.addEventListener("click", () => ChangeSong(false)); //passes false to next
-
     like_btn.addEventListener("click", () => {
       like_btn_icon.classList.toggle("fa-heart");
       like_btn_icon.classList.toggle("fa-heart-crack");
@@ -178,18 +211,6 @@ window.onload = () => {
       current_song_index = 0;
       next_song_index = current_song_index + 1;
       updatePlayer();
-    }
-
-    function updatePlayer() {
-      let song = songs[current_song_index];
-
-      song_img_el.style = "background-image: url('" + song.img_path + "')";
-      song_title_el.innerHTML = song.title;
-      song_artist_el.innerHTML = song.artist;
-      song_next_up_el.innerHTML =
-        songs[next_song_index].title + " by " + songs[next_song_index].artist;
-
-      audio_player.src = song.song_path;
     }
 
     function TogglePlaySong() {
